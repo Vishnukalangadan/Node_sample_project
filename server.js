@@ -5,7 +5,7 @@ const Movie = require('./models/Movie')
 const studentRouter = require('./router/studentRouter')
 app.use(express.json())
 
-app.use('/student', studentRouter)
+app.use('/student', studentRouter)  //router
 app.get('/', async (req, res) => {
     try {
         const movieData = await Movie.find({})
