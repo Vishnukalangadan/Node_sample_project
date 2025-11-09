@@ -70,5 +70,15 @@ router.put('/:student_id', async (req, res) => {
         res.status(500).json({ error: 'internal server error' })
     }
 })
+router.post('/', async (req, res) => {
+    try {
+        const newStudentData = new Student(req.body)
+        const response = await newStudentData.save()
+        res.status(200).json({ message: 'student added successfully', data: response })
+    }
+    catch (err) {
+        res.status(500).json({ error: 'internal server error' })
+    }
+})
 
 module.exports = router

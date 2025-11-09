@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
-
-const MONGODB_URL = 'mongodb://localhost:27017/blog'
+require('dotenv').config()
+const MONGODB_URL = process.env.MONGODB_URL_ATLAS
 mongoose.connect(MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
